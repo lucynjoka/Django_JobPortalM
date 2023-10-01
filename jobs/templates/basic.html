@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{% endblock %}</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, p, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #F0F0F0;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    header {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    nav {
+        background-color: #333;
+        color: white;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+        display: inline;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px;
+        padding-bottom: 100px; /* Space for the footer */
+    }
+
+    .left-pane {
+        float: left;
+        width: 50%;
+        padding-right: 20px;
+        color: #333;
+    }
+
+    .left-pane h2 {
+        font-size: 28px;
+    }
+
+    .left-pane p {
+        margin-top: 20px;
+    }
+
+    .left-pane button {
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .right-pane {
+        float: right;
+        width: 50%;
+    }
+
+    .creamish-background {
+        background-color: #fff7e6;
+        padding: 50px;
+        border-radius: 20px;
+       
+       
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        padding: 20px 0;
+        background-color: #333;
+        color: white;
+    }
+  </style>
+  {% block css %}
+  {% endblock %}
+</head>
+<body>
+  <header>
+    <h1>Job Portal</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/user_login/">User Login</a></li>
+      <li><a href="/admin_login/">Admin Login</a></li>
+      <li><a href="/company_login/">Company Login</a></li>
+    </ul>
+  </nav>
+  <div class="right-pane">
+    <div class="creamish-background">
+        <p>Explore the latest job opportunities.</p>
+        <button onclick="location.href = '{% url 'all_jobs' %}'">View All Jobs</button>
+
+      
+    </div>
+</div>
+<div class="container">
+    <div class="left-pane">
+        <h2>Welcome to Job Portal</h2>
+        <p>Find your dream job with us. Apply now!</p>
+        <button onclick="location.href = '{% url 'all_jobs' %}'">Apply Now</button>
+    </div>
+</div>
+
+    </div>
+  </div>
+  <footer>
+    <h3> Contact us</h3>
+    <p>Email: jobportal@test.com</p>
+  </footer>
+  {% block body %}
+  {% endblock %}
+</body>
+{% block js %}
+{% endblock %}
+</html>

@@ -1,0 +1,190 @@
+/* Reset some default browser styles */
+body, h1, h2, h3, p, ul, ol, li, form, input, button {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Define a common button style */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #605160;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Apply styles to navigation elements */
+.navbar {
+    background-color: #5C0456;
+    color: white;
+    padding: 10px 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+/* Define a style for images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Apply a box shadow to elements with class "box" */
+.box {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    background-color: white;
+}
+
+/* Add more styles as needed for your project */
+
+/* Apply a common text style */
+.text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Create a class for page headings */
+.page-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Create a style for forms and form elements */
+form {
+    margin: 20px 0;
+}
+
+/* Create a style for buttons with a primary action */
+.btn-primary {
+    background-color: #007bff;
+}
+
+
+/* Upper Navigation */
+.navbar-upper {
+    background-color: #5C0456;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-item {
+    margin: 0 10px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #AE2020;
+  }
+  
+  /* Lower Navigation */
+  .navbar-lower {
+    background-color: #000CFF;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  /* Content */
+  .content {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .alert {
+    background-color: #F5A623;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  
+  .alert p {
+    font-size: 1.2em;
+    margin: 0;
+  }
+  
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+div {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+input[type="file"] {
+    padding: 0;
+}
+
+input[type="submit"] {
+    background-color: #5C0456;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #AE2020;
+}

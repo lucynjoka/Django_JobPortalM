@@ -1,0 +1,71 @@
+{% extends 'company_navbar.html' %}
+{%load static%}
+
+{% block title %} Add Jobs {% endblock %}
+{% block add_job %} active {% endblock %}
+{% block css %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Jobs</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        <div>
+            <label>Job Title</label>
+            <input type="text" name="job_title" id="job_title" placeholder="Job Title" required>
+        </div>
+
+        <div>
+            <label>Start Date</label>
+            <input type="date" name="start_date" id="start_date" required>
+        </div>
+
+        <div>
+            <label>End Date</label>
+            <input type="date" name="end_date" id="end_date" required>
+        </div>
+
+        <div>
+            <label>Experience (in years)</label>
+            <input type="text" name="experience" id="experience" placeholder="Experience required (in years)" required>
+        </div>
+
+        <div>
+            <label>Salary (per month)</label>
+            <input type="tel" name="salary" id="salary" placeholder="Enter Salary (per month)" required>
+        </div>
+
+        <div>
+            <label>Skills Required</label>
+            <input type="text" name="skills" id="skills" placeholder="Enter the required skills for the job" required>
+        </div>
+
+        <div>
+            <label>Company Location</label>
+            <input type="text" name="location" id="location" placeholder="Enter the exact location of the Company" required>
+        </div>
+
+        <div>
+            <label>Job Description</label>
+            <textarea name="description" id="description" cols="30" rows="4" placeholder="Description of the job" required></textarea>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Job added successfully.")
+    window.location = "/job_list"
+    {% endif %}
+</script>
+{% endblock %}

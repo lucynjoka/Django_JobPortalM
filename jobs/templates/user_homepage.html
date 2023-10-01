@@ -1,0 +1,91 @@
+{% extends 'user_navbar.html' %}
+{%load static%}
+{% block title %} User Profile {% endblock %}
+{% block home %} active {% endblock %}
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" name="first_name" id="first_name"
+                                value="{{applicant.user.first_name}}" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" name="last_name" id="last_name"
+                                value="{{applicant.user.last_name}}" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label>Username</label>
+                            <input type="text" class="form-control" name="username" id="username"
+                                value="{{applicant.user.username}}" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Email Id</label>
+                            <input type="email" class="form-control" name="email" id="email"
+                                value="{{applicant.user.email}}" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Contact Number</label>
+                            <input type="tel" class="form-control" name="phone" id="phone" value="{{applicant.phone}}"
+                                required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label>Gender</label>
+                            <div>
+                                <div>
+                                    <input type="radio" name="gender" value="Male" checked>
+                                    <label for="male">Male</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="gender" value="Female">
+                                    <label for="female">Female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Profile Photo</label>
+                            <input type="file" name="image" id="image">
+                        </div>
+                    </div>
+                    <input type="submit" value="Submit"
+                        style="background-color: #4f868c; color: white; font-size: larger; width: 8rem;">
+                </form>
+            </div>
+            <div class="col-sm-4 text-center">
+                <img src="{{applicant.image.url}}" alt="" width="200px" height="200px">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}
+{% block js %}
+<script>
+    {% if alert %}
+    alert("Profile Updated Successfully")
+    window.location = "/user_homepage"
+    {% endif %}
+</script>
+{% endblock %}

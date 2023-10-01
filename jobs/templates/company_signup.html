@@ -1,0 +1,99 @@
+{% extends 'basic.html' %}
+
+{% block title %} Company Signup {% endblock %}
+{% block company_login %} active {% endblock %}
+{% block css %}
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px #000000;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        .btn {
+            background-color: #4f868c;
+            color: white;
+            font-size: larger;
+            width: 8rem;
+        }
+    </style>
+{% endblock %}
+{% block body %}
+<div class="container mt-4">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="first_name">First Name</label>
+                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter First Name">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="last_name">Last Name</label>
+                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Last Name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" name="username" id="username" placeholder="Enter Username">
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="password1">Password</label>
+                <input type="password" class="form-control" name="password1" id="password1" placeholder="Enter Password">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password2">Confirm Password</label>
+                <input type="password" class="form-control" name="password2" id="password2" placeholder="Confirm Password">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label for="email">Email Id</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email Id">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phone">Contact Number</label>
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
+            <div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="custom-control-input" name="gender" id="male" value="Male">
+                    <label for="male" class="custom-control-label">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="custom-control-input" name="gender" id="female" value="Female">
+                    <label for="female" class="custom-control-label">Female</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image">Logo of the Company</label>
+            <input type="file" class="form-control" name="image" id="image">
+        </div>
+        <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text" class="form-control" name="company_name" id="company_name" placeholder="Enter Name of the Company">
+        </div>
+        <br>
+        <input type="submit" value="Submit" class="btn">
+    </form>
+</div>
+{% endblock %}

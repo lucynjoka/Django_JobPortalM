@@ -1,0 +1,46 @@
+{% extends 'company_navbar.html' %}
+{%load static%}
+
+{% block title %} All Applicants {% endblock %}
+{% block all_applicants %} active {% endblock %}
+{% block css %}
+   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+{% endblock %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Applicants</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <table class="table" id="example">
+            <thead>
+                <tr>
+                    <th>Sr.No</th>
+                    <th>Job Title</th>
+                    <th>Applicant</th>
+                    <th>Applied On</th>
+                    <th>Resume</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in application %}
+                <tr>
+                    <td>{{forloop.counter}}</td>
+                    <td>{{i.job}}</td>
+                    <td>{{i.applicant}}</td>
+                    <td>{{i.apply_date}}</td>
+                    <td><a href="{{i.resume.url}}" class="btn"><i class="fa fa-file"></i></a></td>
+                    <td><a href="#" class="btn"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+{% endblock %}

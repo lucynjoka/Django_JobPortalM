@@ -1,0 +1,125 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <title>User Signup Page</title>
+<style>
+    /* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F0F0F0;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+div {
+    margin: 10px 0;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+input[type="file"] {
+    padding: 0;
+}
+
+input[type="submit"] {
+    background-color: #5C0456;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input[type="submit"]:hover {
+    background-color: #AE2020;
+}
+
+
+
+
+</style>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div>
+            <label>First Name</label>
+            <input type="text" name="first_name" id="first_name" placeholder="Enter First Name">
+        </div>
+
+        <div>
+            <label>Last Name</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Enter Last Name">
+        </div>
+    
+        <div>
+            <label>Password</label>
+            <input type="password" name="password1" id="password1" placeholder="Enter Password">
+        </div>
+
+        <div>
+            <label>Confirm Password</label>
+            <input type="password" name="password2" id="password2" placeholder="Confirm Password">
+        </div>
+
+        <div>
+            <label>Email Id</label>
+            <input type="email" name="email" id="email" placeholder="Enter Email Id">
+        </div>
+
+        <div>
+            <label>Contact Number</label>
+            <input type="tel" name="phone" id="phone" placeholder="Enter Contact Number">
+        </div>
+
+        <div>
+            <label>Gender</label>
+            <div>
+                <input type="radio" name="gender" id="male" value="Male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female" value="Female">
+                <label for="female">Female</label>
+            </div>
+        </div>
+
+        <div>
+            <label>Profile Picture</label>
+            <input type="file" name="image" id="image" placeholder="Enter Last Name">
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

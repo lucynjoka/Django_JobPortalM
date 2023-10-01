@@ -1,0 +1,86 @@
+
+{% extends 'basic.html' %}
+{%load static%}
+
+{% block title %} Job Portal {% endblock %}
+{% block home %} active {% endblock %}
+{% block css %}
+  <style>
+    /* Your internal CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table, th, td {
+      border: 1px solid #000;
+    }
+
+    th, td {
+      padding: 8px;
+    }
+
+    th {
+      background-color: #4f868c;
+      color: white;
+    }
+
+    .btn {
+      background-color: #4f868c;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+{% endblock %}
+{% load static %}   
+{% block content %}
+    
+<div class="container-fluid mt-2">
+    <img src="{% static 'Recruitment Vector.jpg' %}" alt="Job Portal Image" width="100%" height="350px">
+</div>
+
+<div class="container card">
+    <h1>Available openings</h1>
+    <div class="card-body">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Description</th>
+                <th>Salary</th>
+                <th>Experience</th>
+                <th>Location</th>
+                <th>Join</th>
+            </tr>
+            {% for c in companies %}
+                <tr>
+                    <td>{{c.name}}</td>
+                    <td>{{c.position}}</td>
+                    <td>{{c.description}}</td>
+                    <td>{{c.salary}}</td>
+                    <td>{{c.experience}}</td>
+                    <td>{{c.Location}}</td>
+                    <td><a href="{% url 'apply' %}" class="btn" type="submit">Apply</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+
+<div class="container-fluid mt-4" style="background-color: #C850C0; width: 100%;">
+    <div class="row">
+        <div class="col-md-4"> 
+            <h3 style="color: white;">Contact Us</h3>
+            <p style="color: aliceblue">Email: jobportal@gmail.com</p>
+            <p style="color: aliceblue">Mobile No.: +25479038066</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
